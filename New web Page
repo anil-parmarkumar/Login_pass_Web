@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Sstyle.css">
+    
+    <script src="login_form.js">
+function validate()
+{
+    var username = document.getElementById("uname");
+    var password = document.getElementById("pass");
+    
+    if(username.value.trim()=="")
+    {
+       // alert("blank user name");
+        username.style.border = "solid 3px red";
+        document.getElementById("lbluser")
+        .style.visibility = "visible";
+        return false;
+    }
+    else if(password.value.trim()=="")
+    {
+       //alert("password should not be blank");
+       password.style.border = "solid 3px red";
+        document.getElementById("lblpass")
+        .style.visibility = "visible";
+       return false;
+    }
+    else if(password.value.trim().length<5)
+    {
+        alert("password is short");
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+</script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="label">User Login</h1>
+        <form class="login_form" action="new_baby_shop.html" name="form" onsubmit="return validate();">
+            <div class="font">Email or Phone</div>
+            <input id="uname" type="text" id="email">
+            <label id="lbluser" style="color: red; visibility: hidden;">Invalid User Name</label>
+           
+            <div class="font2">Password</div>
+            <input type="password" id="pass">
+            <label id="lblpass" style="color: red; visibility: hidden;">Invalid Password</label>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    
+</body>
+</html>
+
